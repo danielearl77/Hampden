@@ -502,13 +502,42 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRp-qM-Lzu">
+                                <rect key="frame" x="0.0" y="94" width="428" height="798"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="v2T-ID-TGb">
+                                        <rect key="frame" x="195.66666666666666" y="380.66666666666669" width="37" height="37"/>
+                                        <color key="color" systemColor="systemGreenColor"/>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Loading Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1l-JX-ulz">
+                                        <rect key="frame" x="114" y="387.66666666666669" width="200" height="22.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="J1C-BG-XBU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="n1l-JX-ulz" firstAttribute="centerX" secondItem="BRp-qM-Lzu" secondAttribute="centerX" id="2IZ-uf-T1s"/>
+                                    <constraint firstItem="n1l-JX-ulz" firstAttribute="centerY" secondItem="BRp-qM-Lzu" secondAttribute="centerY" id="Dkk-qd-ygM"/>
+                                    <constraint firstItem="v2T-ID-TGb" firstAttribute="centerY" secondItem="BRp-qM-Lzu" secondAttribute="centerY" id="fPn-Ye-cNT"/>
+                                    <constraint firstItem="v2T-ID-TGb" firstAttribute="centerX" secondItem="BRp-qM-Lzu" secondAttribute="centerX" id="wPy-OD-ipa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Inn-E3-Ego"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QZd-ba-Kep" firstAttribute="bottom" secondItem="Inn-E3-Ego" secondAttribute="bottom" id="1JZ-Dc-pMh"/>
+                            <constraint firstItem="BRp-qM-Lzu" firstAttribute="top" secondItem="iv0-SZ-EWL" secondAttribute="bottom" id="3j0-Hf-fwm"/>
+                            <constraint firstItem="Inn-E3-Ego" firstAttribute="bottom" secondItem="BRp-qM-Lzu" secondAttribute="bottom" id="Ftk-VH-NgB"/>
                             <constraint firstItem="QZd-ba-Kep" firstAttribute="top" secondItem="iv0-SZ-EWL" secondAttribute="bottom" id="GE2-ry-BFm"/>
+                            <constraint firstItem="BRp-qM-Lzu" firstAttribute="trailing" secondItem="Inn-E3-Ego" secondAttribute="trailing" id="TtN-vi-SyJ"/>
                             <constraint firstItem="QZd-ba-Kep" firstAttribute="leading" secondItem="Inn-E3-Ego" secondAttribute="leading" id="X3h-kM-cyI"/>
+                            <constraint firstItem="BRp-qM-Lzu" firstAttribute="leading" secondItem="Inn-E3-Ego" secondAttribute="leading" id="YTJ-MI-Fzj"/>
                             <constraint firstItem="iv0-SZ-EWL" firstAttribute="trailing" secondItem="Inn-E3-Ego" secondAttribute="trailing" id="pEY-JU-mCO"/>
                             <constraint firstItem="QZd-ba-Kep" firstAttribute="trailing" secondItem="Inn-E3-Ego" secondAttribute="trailing" id="pHP-LI-fZ6"/>
                             <constraint firstItem="iv0-SZ-EWL" firstAttribute="leading" secondItem="Inn-E3-Ego" secondAttribute="leading" id="uVc-dF-0hv"/>
@@ -517,6 +546,9 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                     </view>
                     <navigationItem key="navigationItem" id="vSE-DP-8An"/>
                     <connections>
+                        <outlet property="errorMsg" destination="n1l-JX-ulz" id="qe4-WO-9oV"/>
+                        <outlet property="errorView" destination="BRp-qM-Lzu" id="AyQ-kJ-VXW"/>
+                        <outlet property="loadingSpinner" destination="v2T-ID-TGb" id="cU9-D9-DDs"/>
                         <outlet property="webView" destination="QZd-ba-Kep" id="fZ9-Tr-gta"/>
                         <segue destination="whm-sH-HLR" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="STF-9d-I25"/>
                     </connections>
@@ -561,24 +593,38 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                                 </constraints>
                             </view>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qiH-MN-4Xq">
-                                <rect key="frame" x="0.0" y="94" width="428" height="798"/>
+                                <rect key="frame" x="0.0" y="94" width="428" height="728"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvG-6M-BZa">
+                                <rect key="frame" x="174" y="832" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GUV-fX-vO7"/>
+                                    <constraint firstAttribute="width" constant="80" id="y2M-Jn-T5M"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="BACK" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aTg-rr-QuX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="bottom" secondItem="aTg-rr-QuX" secondAttribute="bottom" id="3Yd-lD-Rh2"/>
-                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="trailing" secondItem="aTg-rr-QuX" secondAttribute="trailing" id="7j8-tn-VXQ"/>
+                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="leading" secondItem="aTg-rr-QuX" secondAttribute="leading" id="47I-FT-4ES"/>
                             <constraint firstItem="pqh-US-kdx" firstAttribute="trailing" secondItem="aTg-rr-QuX" secondAttribute="trailing" id="DWR-Yq-b7z"/>
-                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="leading" secondItem="aTg-rr-QuX" secondAttribute="leading" id="Fvl-Ah-TQC"/>
+                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="trailing" secondItem="aTg-rr-QuX" secondAttribute="trailing" id="Imn-Dv-SXU"/>
                             <constraint firstItem="pqh-US-kdx" firstAttribute="leading" secondItem="aTg-rr-QuX" secondAttribute="leading" id="Lzg-uL-zqd"/>
-                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="top" secondItem="pqh-US-kdx" secondAttribute="bottom" id="hC3-oE-rkA"/>
+                            <constraint firstItem="UvG-6M-BZa" firstAttribute="centerX" secondItem="xcy-VN-hBT" secondAttribute="centerX" id="P2R-Vg-0gZ"/>
+                            <constraint firstItem="aTg-rr-QuX" firstAttribute="bottom" secondItem="UvG-6M-BZa" secondAttribute="bottom" constant="20" id="ckR-UX-yMX"/>
+                            <constraint firstItem="qiH-MN-4Xq" firstAttribute="top" secondItem="pqh-US-kdx" secondAttribute="bottom" id="z4C-8D-NEc"/>
                             <constraint firstItem="pqh-US-kdx" firstAttribute="top" secondItem="aTg-rr-QuX" secondAttribute="top" id="zFu-TT-YP0"/>
+                            <constraint firstItem="UvG-6M-BZa" firstAttribute="top" secondItem="qiH-MN-4Xq" secondAttribute="bottom" constant="10" id="zTI-UJ-GGW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="khW-xt-Mly"/>
@@ -867,6 +913,12 @@ For more information see our website www.phone-app.co.uk
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

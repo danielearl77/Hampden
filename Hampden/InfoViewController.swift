@@ -11,6 +11,9 @@ import WebKit
 class InfoViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorMsg: UILabel!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
     func loadStadiumInfo() {
         let fixturesURL = "http://en.wikipedia.org/wiki/Hampden_Park"
@@ -19,22 +22,28 @@ class InfoViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.load(myRequest)
     }
     
+    func showLoadingWindow() {
+        errorMsg.isHidden = true
+        loadingSpinner.isHidden = false
+        errorView.isHidden = false
+    }
+    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        //errorView.isHidden = true
+        errorView.isHidden = true
     }
     
     func webView(_ webView: WKWebView,
                  didFailProvisionalNavigation navigation: WKNavigation!,
                  withError error: Error) {
-        
-        //loadingSpinner.isHidden = true
+        errorMsg.isHidden = false
+        loadingSpinner.isHidden = true
     }
     
     func webView(_ webView: WKWebView,
                  didFail navigation: WKNavigation!,
                  withError error: Error) {
-        
-        //loadingSpinner.isHidden = true
+        errorMsg.isHidden = false
+        loadingSpinner.isHidden = true
     }
     
     // MARK: - ViewDidLoad
