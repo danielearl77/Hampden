@@ -28,6 +28,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWf-xN-77o">
                                         <rect key="frame" x="383.66666666666669" y="9.6666666666666661" width="34.333333333333314" height="30.666666666666671"/>
                                         <buttonConfiguration key="configuration" style="plain" image="info" catalog="system"/>
+                                        <connections>
+                                            <segue destination="yeB-jj-gv1" kind="show" id="W9M-mE-4gv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -67,6 +70,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="HjA-0J-g7b" kind="show" id="hRN-Af-clZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il3-pj-WuG">
                                         <rect key="frame" x="0.0" y="55" width="230" height="40"/>
@@ -93,6 +99,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="Jmb-pM-bSR" kind="show" id="n3E-0z-XYQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TB1-QH-BW9">
                                         <rect key="frame" x="0.0" y="110" width="230" height="40"/>
@@ -119,6 +128,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="vXd-6D-wjn" kind="show" id="cf6-Zj-X0B"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pr5-pn-SMY">
                                         <rect key="frame" x="0.0" y="165" width="230" height="40"/>
@@ -145,6 +157,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="tMw-lL-XPe" kind="show" id="MyW-bj-FQa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3u-Lc-nSV">
                                         <rect key="frame" x="0.0" y="220" width="230" height="40"/>
@@ -171,6 +186,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="3OW-g6-Gdw" kind="show" id="Ntj-pH-Ghe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -192,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="797.10144927536237" y="-7.3660714285714279"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="zZ3-ao-wGT">
             <objects>
-                <viewController id="vXd-6D-wjn" sceneMemberID="viewController">
+                <viewController id="vXd-6D-wjn" customClass="MapViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5q6-wv-2c7">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,23 +233,35 @@
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="vXd-6D-wjn" eventType="touchUpInside" id="GRm-lz-8qM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JGb-Xg-fAK">
+                                <rect key="frame" x="94" y="399" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aWV-Ob-xu5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="20Y-9N-IdW"/>
+                    <connections>
+                        <segue destination="tmt-kU-wID" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="w9Q-rn-g4R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obb-7F-iUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tmt-kU-wID" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1628" y="-767"/>
         </scene>
-        <!--View Controller-->
+        <!--By Rail View Controller-->
         <scene sceneID="6rv-FT-h4U">
             <objects>
-                <viewController id="Jmb-pM-bSR" sceneMemberID="viewController">
+                <viewController id="Jmb-pM-bSR" customClass="ByRailViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x3T-Iv-nKJ">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,6 +281,9 @@
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="Jmb-pM-bSR" eventType="touchUpInside" id="PNW-FJ-Rx8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -281,6 +314,9 @@ From Kings Park, exit onto Kings Park Avenue turn left and walk down to Aikenhea
                                 <buttonConfiguration key="configuration" style="gray" title="Kings Park" cornerStyle="capsule">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="ZrK-b6-9g2" kind="show" id="eJg-Mi-IOr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Live Train Times" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJG-YO-NpY">
                                 <rect key="frame" x="127" y="478" width="122.99999999999997" height="21"/>
@@ -300,6 +336,9 @@ From Kings Park, exit onto Kings Park Avenue turn left and walk down to Aikenhea
                                 <buttonConfiguration key="configuration" style="gray" title="Mount Florida" cornerStyle="capsule">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="ZrK-b6-9g2" kind="show" id="MUz-rn-7yv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mzB-LZ-6Nc"/>
@@ -309,15 +348,20 @@ From Kings Park, exit onto Kings Park Avenue turn left and walk down to Aikenhea
                             <constraint firstItem="rsi-DJ-5qr" firstAttribute="top" secondItem="DJG-YO-NpY" secondAttribute="bottom" constant="10" id="wwa-ga-3Lc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Tar-ST-Z2Y"/>
+                    <connections>
+                        <segue destination="zsf-zB-g68" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="vCk-14-7JK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sN-L4-mDn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zsf-zB-g68" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1628" y="-8"/>
         </scene>
-        <!--View Controller-->
+        <!--By Road View Controller-->
         <scene sceneID="1oF-1f-Vjh">
             <objects>
-                <viewController id="HjA-0J-g7b" sceneMemberID="viewController">
+                <viewController id="HjA-0J-g7b" customClass="ByRoadViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lLh-4X-REE">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,6 +381,9 @@ From Kings Park, exit onto Kings Park Avenue turn left and walk down to Aikenhea
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="HjA-0J-g7b" eventType="touchUpInside" id="pz5-hc-J6I"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -357,15 +404,20 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                         <viewLayoutGuide key="safeArea" id="DOX-OA-czY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1cS-Ca-6IX"/>
+                    <connections>
+                        <segue destination="K2A-Kd-wfb" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="5Zp-pE-yuQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwY-XR-tBT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="K2A-Kd-wfb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-114" y="721"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="BKf-3f-fo6">
             <objects>
-                <viewController id="3OW-g6-Gdw" sceneMemberID="viewController">
+                <viewController id="3OW-g6-Gdw" customClass="InfoViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3N-73-zCY">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -385,23 +437,40 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="3OW-g6-Gdw" eventType="touchUpInside" id="oyd-EH-2uC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZd-ba-Kep">
+                                <rect key="frame" x="94" y="399" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Inn-E3-Ego"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vSE-DP-8An"/>
+                    <connections>
+                        <segue destination="whm-sH-HLR" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="STF-9d-I25"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbt-97-0RW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="whm-sH-HLR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="796" y="721"/>
         </scene>
-        <!--View Controller-->
+        <!--Live Trains View Controller-->
         <scene sceneID="vJP-1a-W8e">
             <objects>
-                <viewController id="ZrK-b6-9g2" sceneMemberID="viewController">
+                <viewController id="ZrK-b6-9g2" customClass="LiveTrainsViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xcy-VN-hBT">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -421,38 +490,40 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="ZrK-b6-9g2" eventType="touchUpInside" id="yCZ-SD-jeA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qiH-MN-4Xq">
+                                <rect key="frame" x="94" y="524" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aTg-rr-QuX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="khW-xt-Mly"/>
+                    <connections>
+                        <segue destination="VnD-OU-4EH" kind="unwind" identifier="backToRail" unwindAction="navBackToRail:" id="o0j-C9-NO3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWF-Yx-p5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VnD-OU-4EH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2549" y="-8"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="WwZ-Vf-kvL">
-            <objects>
-                <viewController id="xVZ-Vo-p9O" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="awl-5T-qNt">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hOO-1b-DdW"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RM2-Xn-NLk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3604" y="1664"/>
-        </scene>
-        <!--View Controller-->
+        <!--Food Drink View Controller-->
         <scene sceneID="N3D-ET-HZr">
             <objects>
-                <viewController id="tMw-lL-XPe" sceneMemberID="viewController">
+                <viewController id="tMw-lL-XPe" customClass="FoodDrinkViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JaP-qH-QLl">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -472,6 +543,9 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="tMw-lL-XPe" eventType="touchUpInside" id="dTb-ob-F2Q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -492,15 +566,20 @@ There are, however, plenty of food options in the area.</string>
                         <viewLayoutGuide key="safeArea" id="EmP-v0-gjT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="U9g-HJ-28b"/>
+                    <connections>
+                        <segue destination="d8x-nZ-cyw" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="tqe-Bg-fYF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRp-9D-Bhv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="d8x-nZ-cyw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1628" y="721"/>
         </scene>
-        <!--View Controller-->
+        <!--Support Us View Controller-->
         <scene sceneID="HY0-u4-1o8">
             <objects>
-                <viewController id="zVg-rJ-sf6" sceneMemberID="viewController">
+                <viewController id="zVg-rJ-sf6" customClass="SupportUsViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gjH-vx-a9R">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -520,6 +599,9 @@ There are, however, plenty of food options in the area.</string>
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="zVg-rJ-sf6" eventType="touchUpInside" id="CS4-Cm-pKr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -564,41 +646,64 @@ There are, however, plenty of food options in the area.</string>
                         <viewLayoutGuide key="safeArea" id="G9y-rN-CcE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="A2k-2h-SEK"/>
+                    <connections>
+                        <segue destination="tpL-oK-pf0" kind="unwind" identifier="backToAbout" unwindAction="navBackToAbout:" id="NvF-Eh-h2f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BaA-yX-gud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tpL-oK-pf0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-115" y="-767"/>
         </scene>
-        <!--View Controller-->
+        <!--About View Controller-->
         <scene sceneID="qT3-zm-hYE">
             <objects>
-                <viewController id="yeB-jj-gv1" sceneMemberID="viewController">
+                <viewController id="yeB-jj-gv1" customClass="AboutViewController" customModule="Hampden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pIJ-8j-aqo">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRr-Md-gjY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cRr-Md-gjY">
                                 <rect key="frame" x="0.0" y="44" width="428" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-JP-FWc">
-                                        <rect key="frame" x="181.33333333333331" y="11" width="65.333333333333343" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-JP-FWc">
+                                        <rect key="frame" x="181.33333333333334" y="11" width="65.333333333333343" height="28"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6o-Vu-18C">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6o-Vu-18C">
                                         <rect key="frame" x="10" y="9.6666666666666643" width="56" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                        <connections>
+                                            <action selector="backBtn:" destination="yeB-jj-gv1" eventType="touchUpInside" id="J8j-sA-rDO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2hb-Fc-tqa"/>
+                                    <constraint firstItem="B6e-JP-FWc" firstAttribute="centerX" secondItem="cRr-Md-gjY" secondAttribute="centerX" id="Iyg-R7-bvm"/>
+                                    <constraint firstItem="M6o-Vu-18C" firstAttribute="leading" secondItem="cRr-Md-gjY" secondAttribute="leading" constant="10" id="MTz-04-FLz"/>
+                                    <constraint firstItem="M6o-Vu-18C" firstAttribute="centerY" secondItem="cRr-Md-gjY" secondAttribute="centerY" id="n85-Vv-K1F"/>
+                                    <constraint firstItem="B6e-JP-FWc" firstAttribute="centerY" secondItem="cRr-Md-gjY" secondAttribute="centerY" id="nWZ-Wr-CDl"/>
+                                </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-0j-mDb">
-                                <rect key="frame" x="20" y="149" width="388" height="743"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbL-nr-362">
+                                <rect key="frame" x="139" y="125" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q6C-y8-JdX"/>
+                                    <constraint firstAttribute="width" constant="150" id="QxW-xj-E9i"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Support Us"/>
+                                <connections>
+                                    <segue destination="zVg-rJ-sf6" kind="show" id="cwX-Sn-vOQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-0j-mDb">
+                                <rect key="frame" x="20" y="185" width="388" height="707"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">This app aims to provide travel information for fans travelling to events at Hampden Park.
 
@@ -615,26 +720,30 @@ For more information see our website www.phone-app.co.uk
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbL-nr-362">
-                                <rect key="frame" x="139" y="102" width="150" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="PbP-I3-F3R"/>
-                                    <constraint firstAttribute="height" constant="35" id="jVF-BL-LI5"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Support Us"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uo6-t9-x2c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fbL-nr-362" firstAttribute="centerX" secondItem="pIJ-8j-aqo" secondAttribute="centerX" id="kY8-o8-1Bs"/>
+                            <constraint firstItem="cRr-Md-gjY" firstAttribute="leading" secondItem="uo6-t9-x2c" secondAttribute="leading" id="FvV-Cx-2eI"/>
+                            <constraint firstItem="VVH-0j-mDb" firstAttribute="top" secondItem="fbL-nr-362" secondAttribute="bottom" constant="20" id="HJA-Tb-2ap"/>
+                            <constraint firstItem="VVH-0j-mDb" firstAttribute="leading" secondItem="uo6-t9-x2c" secondAttribute="leading" constant="20" id="ZRQ-bI-b1F"/>
+                            <constraint firstItem="uo6-t9-x2c" firstAttribute="trailing" secondItem="VVH-0j-mDb" secondAttribute="trailing" constant="20" id="ea4-P8-UBQ"/>
+                            <constraint firstItem="fbL-nr-362" firstAttribute="top" secondItem="pIJ-8j-aqo" secondAttribute="top" constant="125" id="hBH-WJ-Gyu"/>
+                            <constraint firstItem="fbL-nr-362" firstAttribute="centerX" secondItem="pIJ-8j-aqo" secondAttribute="centerX" id="k9S-3d-I6X"/>
+                            <constraint firstItem="cRr-Md-gjY" firstAttribute="top" secondItem="uo6-t9-x2c" secondAttribute="top" id="wmG-pO-48Y"/>
+                            <constraint firstItem="VVH-0j-mDb" firstAttribute="bottom" secondItem="uo6-t9-x2c" secondAttribute="bottom" id="yz0-9J-yTP"/>
+                            <constraint firstItem="cRr-Md-gjY" firstAttribute="trailing" secondItem="uo6-t9-x2c" secondAttribute="trailing" id="z4R-xW-aOD"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="In1-og-SCH"/>
+                    <connections>
+                        <segue destination="yYC-uZ-cIZ" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="gI6-Be-FaD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsn-l1-lgY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yYC-uZ-cIZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="795" y="-767"/>
+            <point key="canvasLocation" x="794.85981308411215" y="-767.17062634989202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RpZ-6S-Map">
@@ -654,6 +763,9 @@ For more information see our website www.phone-app.co.uk
             <point key="canvasLocation" x="-113.04347826086958" y="-7.3660714285714279"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eJg-Mi-IOr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="info" catalog="system" width="93" height="128"/>
         <systemColor name="labelColor">

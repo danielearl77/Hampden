@@ -13,6 +13,14 @@
 		148C2DDE2711CEEA001257BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148C2DDC2711CEEA001257BE /* Main.storyboard */; };
 		148C2DE02711CEEB001257BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148C2DDF2711CEEB001257BE /* Assets.xcassets */; };
 		148C2DE32711CEEB001257BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 148C2DE12711CEEB001257BE /* LaunchScreen.storyboard */; };
+		148C2DEB2711F68C001257BE /* SupportUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DEA2711F68C001257BE /* SupportUsViewController.swift */; };
+		148C2DED2711F69A001257BE /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DEC2711F69A001257BE /* AboutViewController.swift */; };
+		148C2DEF2711F6A2001257BE /* ByRoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DEE2711F6A2001257BE /* ByRoadViewController.swift */; };
+		148C2DF12711F6A9001257BE /* ByRailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF02711F6A9001257BE /* ByRailViewController.swift */; };
+		148C2DF32711F6B4001257BE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF22711F6B4001257BE /* MapViewController.swift */; };
+		148C2DF52711F6C0001257BE /* FoodDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF42711F6C0001257BE /* FoodDrinkViewController.swift */; };
+		148C2DF72711F6C7001257BE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF62711F6C7001257BE /* InfoViewController.swift */; };
+		148C2DF92711F6CF001257BE /* LiveTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF82711F6CF001257BE /* LiveTrainsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		148C2DDF2711CEEB001257BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		148C2DE22711CEEB001257BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		148C2DE42711CEEB001257BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148C2DEA2711F68C001257BE /* SupportUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportUsViewController.swift; sourceTree = "<group>"; };
+		148C2DEC2711F69A001257BE /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		148C2DEE2711F6A2001257BE /* ByRoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByRoadViewController.swift; sourceTree = "<group>"; };
+		148C2DF02711F6A9001257BE /* ByRailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByRailViewController.swift; sourceTree = "<group>"; };
+		148C2DF22711F6B4001257BE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		148C2DF42711F6C0001257BE /* FoodDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDrinkViewController.swift; sourceTree = "<group>"; };
+		148C2DF62711F6C7001257BE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		148C2DF82711F6CF001257BE /* LiveTrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrainsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,14 @@
 				148C2DD82711CEEA001257BE /* SceneDelegate.swift */,
 				148C2DDA2711CEEA001257BE /* ViewController.swift */,
 				148C2DDC2711CEEA001257BE /* Main.storyboard */,
+				148C2DEA2711F68C001257BE /* SupportUsViewController.swift */,
+				148C2DEC2711F69A001257BE /* AboutViewController.swift */,
+				148C2DEE2711F6A2001257BE /* ByRoadViewController.swift */,
+				148C2DF02711F6A9001257BE /* ByRailViewController.swift */,
+				148C2DF22711F6B4001257BE /* MapViewController.swift */,
+				148C2DF42711F6C0001257BE /* FoodDrinkViewController.swift */,
+				148C2DF62711F6C7001257BE /* InfoViewController.swift */,
+				148C2DF82711F6CF001257BE /* LiveTrainsViewController.swift */,
 				148C2DDF2711CEEB001257BE /* Assets.xcassets */,
 				148C2DE12711CEEB001257BE /* LaunchScreen.storyboard */,
 				148C2DE42711CEEB001257BE /* Info.plist */,
@@ -138,9 +162,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148C2DF12711F6A9001257BE /* ByRailViewController.swift in Sources */,
+				148C2DEB2711F68C001257BE /* SupportUsViewController.swift in Sources */,
+				148C2DF92711F6CF001257BE /* LiveTrainsViewController.swift in Sources */,
+				148C2DEF2711F6A2001257BE /* ByRoadViewController.swift in Sources */,
 				148C2DDB2711CEEA001257BE /* ViewController.swift in Sources */,
+				148C2DF72711F6C7001257BE /* InfoViewController.swift in Sources */,
 				148C2DD72711CEEA001257BE /* AppDelegate.swift in Sources */,
+				148C2DF52711F6C0001257BE /* FoodDrinkViewController.swift in Sources */,
+				148C2DED2711F69A001257BE /* AboutViewController.swift in Sources */,
 				148C2DD92711CEEA001257BE /* SceneDelegate.swift in Sources */,
+				148C2DF32711F6B4001257BE /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
