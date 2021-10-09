@@ -6,27 +6,46 @@
 //
 
 import UIKit
+import WebKit
 
-class InfoViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class InfoViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
+    
+    @IBOutlet weak var webView: WKWebView!
+    
+    func loadStadiumInfo() {
+        let fixturesURL = "http://en.wikipedia.org/wiki/Hampden_Park"
+        let myURL = URL(string: fixturesURL)
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        //errorView.isHidden = true
+    }
+    
+    func webView(_ webView: WKWebView,
+                 didFailProvisionalNavigation navigation: WKNavigation!,
+                 withError error: Error) {
+        
+        //loadingSpinner.isHidden = true
+    }
+    
+    func webView(_ webView: WKWebView,
+                 didFail navigation: WKNavigation!,
+                 withError error: Error) {
+        
+        //loadingSpinner.isHidden = true
+    }
+    
+    // MARK: - ViewDidLoad
+    override func viewDidLoad() {
+        webView.navigationDelegate = self
+        loadStadiumInfo()
+        super.viewDidLoad()
+    }
+    
+    // MARK: - Navigation
     @IBAction func backBtn(_ sender: Any) {
         performSegue(withIdentifier: "backToHome", sender: self)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

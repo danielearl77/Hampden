@@ -6,27 +6,34 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var StadLocMap: MKMapView!
+    
+    let locMan:CLLocationManager=CLLocationManager()
+    
+    func setMapToGround() {
+        let lat = 55.8252342
+        let lon = -4.2531995
+        let centerRegion: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        let spanRegion: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        let mapRegion: MKCoordinateRegion = MKCoordinateRegion(center: centerRegion, span: spanRegion)
+        StadLocMap.setRegion(mapRegion, animated: true)
     }
     
+    // MARK: - ViewDidLoad
+    override func viewDidLoad() {
+        setMapToGround()
+        super.viewDidLoad()
+        self.locMan.requestWhenInUseAuthorization()
+    }
+    
+    // MARK: - Navigation
     @IBAction func backBtn(_ sender: Any) {
         performSegue(withIdentifier: "backToHome", sender: self)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

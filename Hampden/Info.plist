@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We will display your location on the stadium map page if you give permisson</string>
 </dict>
 </plist>

@@ -21,6 +21,10 @@
 		148C2DF52711F6C0001257BE /* FoodDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF42711F6C0001257BE /* FoodDrinkViewController.swift */; };
 		148C2DF72711F6C7001257BE /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF62711F6C7001257BE /* InfoViewController.swift */; };
 		148C2DF92711F6CF001257BE /* LiveTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148C2DF82711F6CF001257BE /* LiveTrainsViewController.swift */; };
+		148C2DFC2711FFE8001257BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148C2DFB2711FFE8001257BE /* CoreLocation.framework */; };
+		148C2DFE2711FFED001257BE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148C2DFD2711FFED001257BE /* MapKit.framework */; };
+		148C2E002711FFF2001257BE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148C2DFF2711FFF2001257BE /* WebKit.framework */; };
+		148C2E022711FFF8001257BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148C2E012711FFF8001257BE /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		148C2DF42711F6C0001257BE /* FoodDrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDrinkViewController.swift; sourceTree = "<group>"; };
 		148C2DF62711F6C7001257BE /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		148C2DF82711F6CF001257BE /* LiveTrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrainsViewController.swift; sourceTree = "<group>"; };
+		148C2DFB2711FFE8001257BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		148C2DFD2711FFED001257BE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		148C2DFF2711FFF2001257BE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		148C2E012711FFF8001257BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				148C2DFE2711FFED001257BE /* MapKit.framework in Frameworks */,
+				148C2DFC2711FFE8001257BE /* CoreLocation.framework in Frameworks */,
+				148C2E002711FFF2001257BE /* WebKit.framework in Frameworks */,
+				148C2E022711FFF8001257BE /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +70,7 @@
 			children = (
 				148C2DD52711CEEA001257BE /* Hampden */,
 				148C2DD42711CEEA001257BE /* Products */,
+				148C2DFA2711FFE8001257BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +102,17 @@
 				148C2DE42711CEEB001257BE /* Info.plist */,
 			);
 			path = Hampden;
+			sourceTree = "<group>";
+		};
+		148C2DFA2711FFE8001257BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				148C2E012711FFF8001257BE /* StoreKit.framework */,
+				148C2DFF2711FFF2001257BE /* WebKit.framework */,
+				148C2DFD2711FFED001257BE /* MapKit.framework */,
+				148C2DFB2711FFE8001257BE /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
