@@ -11,10 +11,16 @@ import WebKit
 class LiveTrainsViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorMsg: UILabel!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var webBackBtn: UIButton!
+    
     var station = ""
     
+    
     func loadStationData() {
-        
+        errorView.isHidden = false
         var stationURL = "http://m.nationalrail.co.uk/pj/ldbboard/dep/"
         stationURL.append(station)
         let myURL = URL(string: stationURL)
@@ -23,21 +29,28 @@ class LiveTrainsViewController: UIViewController, WKUIDelegate, WKNavigationDele
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        //errorMsg.isHidden = true
+        errorMsg.isHidden = true
+        errorView.isHidden = true
+        let allowBack = webView.canGoBack
+        if allowBack == true {
+            webBackBtn.isEnabled = true
+        } else {
+            webBackBtn.isEnabled = false
+        }
     }
     
     func webView(_ webView: WKWebView,
                  didFailProvisionalNavigation navigation: WKNavigation!,
                  withError error: Error) {
-        //errorMsgLabel.text = "Error Loading Page"
-       // loadingSpinner.isHidden = true
+        errorMsg.isHidden = false
+        loadingSpinner.isHidden = true
     }
     
     func webView(_ webView: WKWebView,
                  didFail navigation: WKNavigation!,
                  withError error: Error) {
-        //errorMsgLabel.text = "Error Loading Page"
-        //loadingSpinner.isHidden = true
+        errorMsg.isHidden = false
+        loadingSpinner.isHidden = true
     }
     
     // MARK: - ViewDidLoad
@@ -52,4 +65,9 @@ class LiveTrainsViewController: UIViewController, WKUIDelegate, WKNavigationDele
     @IBAction func backBtn(_ sender: Any) {
         performSegue(withIdentifier: "backToRail", sender: self)
     }
+    
+    @IBAction func webBack(_ sender: Any) {
+        webView.goBack()
+    }
+    
 }
