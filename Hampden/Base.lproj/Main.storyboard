@@ -647,7 +647,7 @@ The ground is on Aikenhead Road, on the right after Curling Crescent.</string>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvG-6M-BZa">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UvG-6M-BZa">
                                 <rect key="frame" x="174" y="832" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GUV-fX-vO7"/>
@@ -863,7 +863,7 @@ Please note this is jsut a digital tip no extra functionality will be unlocked, 
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aS-oy-Whb">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aS-oy-Whb">
                                 <rect key="frame" x="139" y="427.33333333333331" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ddg-sP-IXf"/>
@@ -871,6 +871,9 @@ Please note this is jsut a digital tip no extra functionality will be unlocked, 
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Send Tip"/>
+                                <connections>
+                                    <action selector="purchaseTip:" destination="zVg-rJ-sf6" eventType="touchUpInside" id="WSx-8S-kRg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t39-jR-feF">
                                 <rect key="frame" x="167.66666666666666" y="334" width="92.999999999999972" height="19.333333333333314"/>

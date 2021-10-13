@@ -28,7 +28,7 @@ class IAPManager: NSObject {
     }
     
     fileprivate func getProductIds() -> [String]? {
-        guard let url = Bundle.main.url(forResource: "productIds", withExtension: "plist") else { return nil}
+        guard let url = Bundle.main.url(forResource: "ProductIds", withExtension: "plist") else { return nil}
         
         do {
             let data = try Data(contentsOf: url)
@@ -117,6 +117,7 @@ extension IAPManager: SKPaymentTransactionObserver {
                     NSLog("IAP Purchase in progress")
                     break
                 @unknown default:
+                    NSLog("IAP Unknown Error....")
                     break
             }
         }

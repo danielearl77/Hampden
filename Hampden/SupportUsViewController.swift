@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class SupportUsViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class SupportUsViewController: UIViewController {
     @IBOutlet weak var IAPLoadingView: UIView!
     
     let kTipCount = "countOfTipsGiven"
-    
+    var products = [SKProduct]()
     
     // MARK: - Functions
     func getNumberOfTipsGiven() -> Int {
@@ -32,11 +33,73 @@ class SupportUsViewController: UIViewController {
         userDefaults.set(update, forKey: kTipCount)
     }
     
+    func showIAPRelatedError(_ error: Error) {
+        let alertMsg = error.localizedDescription
+        let alert = UIAlertController(title: "In App Purchase Error", message: alertMsg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { _ in NSLog("IAP ERROR: " + alertMsg)}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - In App Purchase
+    @IBAction func purchaseTip(_ sender: Any) {
+        if !self.purchase(product: products[0]) {
+            let alertMsg = "WARNING: In App Purchases not allowed on this device."
+            let alert = UIAlertController(title: "Upgrade Purchase", message: alertMsg, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { _ in NSLog("IAP Not Allowed")}))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func purchase(product: SKProduct) -> Bool {
+        if !IAPManager.shared.canMakePayments() {
+            return false
+        } else {
+            self.IAPLoadingView.isHidden = false
+            IAPManager.shared.buy(product: product) { (result) in
+                DispatchQueue.main.async {
+                    self.IAPLoadingView.isHidden = true
+                    switch result {
+                        case .success(_):
+                            self.updateNumberOfTipsGiven()
+                        case .failure(let error):
+                            //self.showIAPRelatedError(error)
+                            let alertMsg = error.localizedDescription
+                            let alert = UIAlertController(title: "In App Purchase Error", message: alertMsg, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { _ in NSLog("IAP ERROR: " + alertMsg)}))
+                            self.present(alert, animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+        return true
+    }
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         let test = getNumberOfTipsGiven()
         print(test)
+        
+        IAPManager.shared.getProducts { (result) in
+            DispatchQueue.main.async {
+                self.IAPLoadingView.isHidden = true
+                switch result {
+                    case .success(let products): self.products = products
+                    case .failure(let error): self.showIAPRelatedError(error)
+                }
+                
+                if self.products.count > 0 {
+                    self.ProductDetail.text = self.products[0].localizedDescription
+                    self.ProductTitle.text = self.products[0].localizedTitle
+                    guard let price = IAPManager.shared.getPriceFormatted(for: self.products[0]) else {return}
+                    self.ProductPrice.text = price
+                    self.ProductTitle.isHidden = false
+                    self.ProductPrice.isHidden = false
+                    self.ProductDetail.isHidden = false
+                    self.ProductPurchaseBtn.isHidden = false
+                }
+            }
+        }
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

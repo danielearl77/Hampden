@@ -34,8 +34,10 @@ class LiveTrainsViewController: UIViewController, WKUIDelegate, WKNavigationDele
         let allowBack = webView.canGoBack
         if allowBack == true {
             webBackBtn.isEnabled = true
+            webBackBtn.isHidden = false
         } else {
             webBackBtn.isEnabled = false
+            webBackBtn.isHidden = true
         }
     }
     
