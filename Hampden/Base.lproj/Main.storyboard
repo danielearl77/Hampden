@@ -337,7 +337,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="214" id="DOT-KL-QgB"/>
                                 </constraints>
-                                <string key="text">Mount Florida and Kings Park stations are both a five minute walk from the ground.  Both stations are around 15 minutes from Glasgow Central.
+                                <string key="text">Mount Florida and Kings Park stations are both a five-minute walk from the ground.  Both stations are around 15 minutes from Glasgow Central.
 
 From Mount Florida, exit onto Florida Drive and walk down Bolton Drive.  Cross over Cathcart Road, and walk down Sommerville Drive to the ground.
 
@@ -842,11 +842,11 @@ There are, however, plenty of food options in the area.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="hMM-wL-edg"/>
                                 </constraints>
-                                <string key="text">Our Apps used to serve Google Ads but as user privacy becomes more of an issue we have taken the dicision to remove ads from all of our apps.
+                                <string key="text">Our Apps used to serve Google Ads but as user privacy becomes more of an issue we have taken the decision to remove ads from all of our apps.
 
-To help keep our apps free please consider making a donation by tapping Send Tip below.
+To help keep our apps free please consider donating by tapping Send Tip below.
 
-Please note this is jsut a digital tip no extra functionality will be unlocked, you are just helping keep our apps free.  If you wish you can give more than once.</string>
+Please note this is just a digital tip no extra functionality will be unlocked, you are just helping keep our apps free.  If you wish you can give more than once.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
