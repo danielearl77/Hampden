@@ -991,17 +991,6 @@ Please note this is jsut a digital tip no extra functionality will be unlocked, 
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="VVH-0j-mDb">
                                 <rect key="frame" x="20" y="185" width="388" height="707"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">This app aims to provide travel information for fans travelling to events at Hampden Park.
-
-Help keep this app free by leaving us a digital tip - tap the Support Us button.
-    
-All directions given in this app are taken from either maps or personal experience.  Please contact us if you think the directions are wrong or can provide clearer routes to the stadium.
-
-This app is not affiliated with Hampden Park or the Scottish FA, and neither has provided any information for this app.  Stadium Infomation is linked from the www.wikipedia.org website and train data is linked from www.nationalrail.co.uk.
-
-For more information see our website www.phone-app.co.uk
-
-©2012-2019. Version 3.5</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -1023,6 +1012,7 @@ For more information see our website www.phone-app.co.uk
                     </view>
                     <navigationItem key="navigationItem" id="In1-og-SCH"/>
                     <connections>
+                        <outlet property="aboutTextBox" destination="VVH-0j-mDb" id="S1j-aN-vna"/>
                         <segue destination="yYC-uZ-cIZ" kind="unwind" identifier="backToHome" unwindAction="navBackToHome:" id="gI6-Be-FaD"/>
                     </connections>
                 </viewController>
