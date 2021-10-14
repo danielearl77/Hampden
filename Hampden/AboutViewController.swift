@@ -32,7 +32,7 @@ class AboutViewController: UIViewController {
     }
     
     @IBAction func navBackToAbout( _ seg: UIStoryboardSegue) {
-        print("unwind run")
+        //NSLog("Unwind")
     }
     /*
     
