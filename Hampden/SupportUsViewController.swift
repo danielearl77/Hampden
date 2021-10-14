@@ -18,6 +18,7 @@ class SupportUsViewController: UIViewController {
     @IBOutlet weak var IAPLoadingView: UIView!
     
     let kTipCount = "countOfTipsGiven"
+    let tipLimit = 3
     var products = [SKProduct]()
     
     // MARK: - Functions
@@ -31,6 +32,11 @@ class SupportUsViewController: UIViewController {
         let count = userDefaults.integer(forKey: kTipCount)
         let update = count + 1
         userDefaults.set(update, forKey: kTipCount)
+        
+        if update >= tipLimit {
+            ProductPurchaseBtn.isEnabled = false
+        }
+        
     }
     
     func showIAPRelatedError(_ error: Error) {
@@ -62,11 +68,7 @@ class SupportUsViewController: UIViewController {
                         case .success(_):
                             self.updateNumberOfTipsGiven()
                         case .failure(let error):
-                            //self.showIAPRelatedError(error)
-                            let alertMsg = error.localizedDescription
-                            let alert = UIAlertController(title: "In App Purchase Error", message: alertMsg, preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: { _ in NSLog("IAP ERROR: " + alertMsg)}))
-                            self.present(alert, animated: true, completion: nil)
+                            self.showIAPRelatedError(error)
                     }
                 }
             }
@@ -76,32 +78,32 @@ class SupportUsViewController: UIViewController {
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
-        let test = getNumberOfTipsGiven()
-        print(test)
-        
-        IAPManager.shared.getProducts { (result) in
-            DispatchQueue.main.async {
-                self.IAPLoadingView.isHidden = true
-                switch result {
-                    case .success(let products): self.products = products
-                    case .failure(let error): self.showIAPRelatedError(error)
-                }
-                
-                if self.products.count > 0 {
-                    self.ProductDetail.text = self.products[0].localizedDescription
-                    self.ProductTitle.text = self.products[0].localizedTitle
-                    guard let price = IAPManager.shared.getPriceFormatted(for: self.products[0]) else {return}
-                    self.ProductPrice.text = price
-                    self.ProductTitle.isHidden = false
-                    self.ProductPrice.isHidden = false
-                    self.ProductDetail.isHidden = false
-                    self.ProductPurchaseBtn.isHidden = false
+        if getNumberOfTipsGiven() <= tipLimit {
+            IAPManager.shared.getProducts { (result) in
+                DispatchQueue.main.async {
+                    self.IAPLoadingView.isHidden = true
+                    switch result {
+                        case .success(let products): self.products = products
+                        case .failure(let error): self.showIAPRelatedError(error)
+                    }
+                    if self.products.count > 0 {
+                        self.ProductDetail.text = self.products[0].localizedDescription
+                        self.ProductTitle.text = self.products[0].localizedTitle
+                        guard let price = IAPManager.shared.getPriceFormatted(for: self.products[0]) else {return}
+                        self.ProductPrice.text = price
+                        self.ProductTitle.isHidden = false
+                        self.ProductPrice.isHidden = false
+                        self.ProductDetail.isHidden = false
+                        self.ProductPurchaseBtn.isHidden = false
+                    }
                 }
             }
+        } else {
+            self.ProductTitle.text = "Digital Tip Currently Unavailable"
+            self.ProductTitle.isHidden = false
+            self.IAPLoadingView.isHidden = true
         }
-        
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
